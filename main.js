@@ -3,6 +3,7 @@ import { createScene } from './src/core/scene.js';
 import { createPlayer } from './src/entities/player.js';
 import { createBall } from './src/entities/ball.js';
 import { createField } from './src/entities/field.js';
+import { createGoal } from './src/entities/goal.js';
 import { setupKeyboard } from './src/controls/input.js';
 import { setupMouse } from './src/controls/mouse.js';
 import { updatePlayer, updateCamera } from './src/game.js';
@@ -17,10 +18,14 @@ document.body.appendChild(renderer.domElement);
 const player = createPlayer();
 const ball = createBall();
 const field = createField();
+const leftGoal = createGoal('left');
+const rightGoal = createGoal('right');
 
 scene.add(player);
 scene.add(ball);
 scene.add(field);
+scene.add(leftGoal);
+scene.add(rightGoal);
 
 // Controles
 setupKeyboard();
